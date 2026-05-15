@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+wheels/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# Keep .env.example
+!.env.example
+
+# Data — raw downloads can be re-fetched; never commit large files
+data/raw/*
+data/processed/*
+data/external/*
+data/db/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!data/db/.gitkeep
+
+# Trained models
+models/
+*.pkl
+*.joblib
+*.json.model
+*.ubj
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store

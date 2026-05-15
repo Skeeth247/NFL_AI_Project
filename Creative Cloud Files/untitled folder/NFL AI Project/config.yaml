@@ -1,0 +1,112 @@
+project:
+  name: "NFL AI Chatbot"
+  version: "0.1.0"
+
+data:
+  seasons: [2020, 2021, 2022, 2023, 2024]
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  external_dir: "data/external"
+  db_path: "data/db/nfl.db"
+
+  nflverse:
+    datasets:
+      - "schedules"
+      - "team_stats"
+      - "player_stats"
+      - "rosters"
+
+scraping:
+  rate_limit_seconds: 3
+  max_retries: 3
+  timeout_seconds: 30
+  respect_robots_txt: true
+  sources:
+    - name: "pro_football_reference"
+      base_url: "https://www.pro-football-reference.com"
+      allowed: true
+
+features:
+  rolling_window: 4          # games for rolling averages
+  elo:
+    k_factor: 20
+    initial_rating: 1500
+    home_advantage: 48
+    regression_to_mean: 0.33 # applied each new season
+
+models:
+  train_seasons: [2020, 2021, 2022]
+  val_season: 2023
+  test_season: 2024
+  output_dir: "models"
+
+  win_predictor:
+    type: "xgboost"
+    params:
+      n_estimators: 500
+      max_depth: 5
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      eval_metric: "logloss"
+      early_stopping_rounds: 50
+
+  ats_predictor:
+    type: "xgboost"
+    params:
+      n_estimators: 500
+      max_depth: 4
+      learning_rate: 0.05
+      subsample: 0.8
+      colsample_bytree: 0.8
+      eval_metric: "logloss"
+      early_stopping_rounds: 50
+
+  baseline:
+    type: "logistic_regression"
+    params:
+      C: 1.0
+      max_iter: 1000
+
+chatbot:
+  max_tool_turns: 6
+  system_prompt: >
+    You are an expert NFL analyst assistant. You answer questions about
+    teams, players, game predictions, and betting trends using structured
+    data tools. Never guess statistics — always call the appropriate tool.
+    When presenting predictions, always include the model's confidence level
+    and a brief caveat that predictions are probabilistic, not guaranteed.
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  cors_origins:
+    - "http://localhost:8501"
+    - "http://localhost:3000"
+
+database:
+  url: "sqlite+aiosqlite:///data/db/nfl.db"
+  echo: false           # set true to log SQL queries during development
+  tables:
+    - schedules
+    - team_stats
+    - player_stats
+    - game_features
+    - predictions
+
+evaluation:
+  output_dir: "reports"
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - roc_auc
+    - brier_score
+    - log_loss
+  calibration:
+    n_bins: 10
+    strategy: "uniform"   # uniform | quantile
+  save_plots: true
+  plot_format: "png"      # png | svg
