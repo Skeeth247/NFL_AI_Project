@@ -1,0 +1,12 @@
+schedule_season,schedule_week,team_home,team_away,score_home,score_away,team_favorite_id,spread_favorite,over_under_line,stadium,weather_temperature,weather_wind_mph
+2024,1,Kansas City Chiefs,San Francisco 49ers,27,20,KC,-3.5,47.5,Arrowhead Stadium,72,8
+2024,1,Dallas Cowboys,Cleveland Browns,33,17,DAL,-7.0,41.0,AT&T Stadium,82,5
+2024,2,Philadelphia Eagles,Atlanta Falcons,22,21,PHI,-3.0,45.5,Lincoln Financial Field,68,12
+2024,3,Seattle Seahawks,Los Angeles Rams,16,24,LA,1.5,44.0,Lumen Field,58,15
+2024,4,Buffalo Bills,Miami Dolphins,28,27,BUF,-5.5,52.0,Highmark Stadium,61,18
+2023,1,Kansas City Chiefs,Detroit Lions,21,20,KC,-2.5,52.5,Arrowhead Stadium,85,6
+2023,5,Philadelphia Eagles,New York Jets,14,10,PHI,-6.5,43.5,Lincoln Financial Field,70,10
+2023,15,San Francisco 49ers,Arizona Cardinals,45,29,SF,-13.5,46.0,Levi's Stadium,65,7
+2022,1,Buffalo Bills,Los Angeles Rams,31,10,BUF,-2.5,52.5,Highmark Stadium,73,12
+2021,1,Tampa Bay Buccaneers,Dallas Cowboys,31,29,TB,-6.5,51.5,Raymond James Stadium,87,8
+2020,1,Kansas City Chiefs,Houston Texans,34,20,KC,-9.5,54.5,Arrowhead Stadium,80,10
