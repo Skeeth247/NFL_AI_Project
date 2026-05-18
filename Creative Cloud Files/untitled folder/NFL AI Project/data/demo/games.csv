@@ -1,0 +1,57 @@
+game_id,season,week,game_type,home_team,away_team,home_score,away_score,home_win,overtime,neutral_site,div_game,roof,surface,stadium,gameday,gametime,spread_line,total_line
+2022_01_BUF_KC,2022,1,REG,KC,BUF,27,24,1,0,0,0,retractable,grass,Arrowhead Stadium,2022-09-11,13:00,-3.5,54.5
+2022_01_DAL_PHI,2022,1,REG,PHI,DAL,26,17,1,0,0,0,outdoors,grass,Lincoln Financial Field,2022-09-11,13:00,-5.5,48.5
+2022_01_BAL_SF,2022,1,REG,SF,BAL,27,20,1,0,0,0,outdoors,grass,Levi's Stadium,2022-09-11,13:00,-4.5,45.5
+2022_01_DET_MIA,2022,1,REG,MIA,DET,28,17,1,0,0,0,outdoors,grass,Hard Rock Stadium,2022-09-11,13:00,-6.5,50.5
+2022_02_PHI_BUF,2022,2,REG,BUF,PHI,31,21,1,0,0,0,outdoors,astroturf,Highmark Stadium,2022-09-18,13:00,-4.5,52.5
+2022_02_SF_DAL,2022,2,REG,DAL,SF,23,17,1,0,0,0,retractable,astroturf,AT&T Stadium,2022-09-18,13:00,-3.5,47.5
+2022_02_MIA_BAL,2022,2,REG,BAL,MIA,28,13,1,0,0,0,retractable,astroturf,M&T Bank Stadium,2022-09-18,13:00,-7.5,46.5
+2022_02_KC_DET,2022,2,REG,DET,KC,14,30,0,0,0,0,retractable,astroturf,Ford Field,2022-09-18,13:00,6.5,51.5
+2022_03_PHI_KC,2022,3,REG,KC,PHI,30,20,1,0,0,0,retractable,grass,Arrowhead Stadium,2022-09-25,13:00,-7.5,55.0
+2022_03_DAL_BUF,2022,3,REG,BUF,DAL,28,14,1,0,0,0,outdoors,astroturf,Highmark Stadium,2022-09-25,13:00,-5.5,53.0
+2022_03_MIA_SF,2022,3,REG,SF,MIA,34,10,1,0,0,0,outdoors,grass,Levi's Stadium,2022-09-25,13:00,-6.5,50.0
+2022_03_KC_BAL,2022,3,REG,BAL,KC,24,27,0,0,0,0,retractable,astroturf,M&T Bank Stadium,2022-09-25,13:00,-1.5,47.5
+2022_04_SF_PHI,2022,4,REG,PHI,SF,17,13,1,0,0,0,outdoors,grass,Lincoln Financial Field,2022-10-02,13:00,-3.5,45.5
+2022_04_BAL_DAL,2022,4,REG,DAL,BAL,20,20,0,0,0,0,retractable,astroturf,AT&T Stadium,2022-10-02,13:00,-2.5,46.0
+2022_04_BUF_MIA,2022,4,REG,MIA,BUF,21,21,0,0,0,0,outdoors,grass,Hard Rock Stadium,2022-10-02,13:00,-3.5,53.0
+2022_04_DET_BUF,2022,4,REG,BUF,DET,31,17,1,0,0,0,outdoors,astroturf,Highmark Stadium,2022-10-02,13:00,7.5,51.0
+2022_05_SF_KC,2022,5,REG,KC,SF,44,10,1,0,0,0,retractable,grass,Arrowhead Stadium,2022-10-09,13:00,-10.5,54.5
+2022_05_BAL_BUF,2022,5,REG,BUF,BAL,23,20,1,0,0,0,outdoors,astroturf,Highmark Stadium,2022-10-09,13:00,-3.5,49.5
+2022_05_DET_PHI,2022,5,REG,PHI,DET,29,14,1,0,0,0,outdoors,grass,Lincoln Financial Field,2022-10-09,13:00,-8.5,50.5
+2022_05_MIA_DAL,2022,5,REG,DAL,MIA,17,26,0,0,0,0,retractable,astroturf,AT&T Stadium,2022-10-09,13:00,1.5,52.0
+2022_06_BUF_KC,2022,6,REG,KC,BUF,20,24,0,0,0,0,retractable,grass,Arrowhead Stadium,2022-10-16,13:00,2.5,55.5
+2022_06_PHI_BAL,2022,6,REG,BAL,PHI,20,24,0,0,0,0,retractable,astroturf,M&T Bank Stadium,2022-10-16,13:00,-2.5,46.5
+2022_06_DAL_SF,2022,6,REG,SF,DAL,17,23,0,0,0,0,outdoors,grass,Levi's Stadium,2022-10-16,13:00,2.5,49.5
+2022_06_DET_MIA,2022,6,REG,MIA,DET,21,14,1,0,0,0,outdoors,grass,Hard Rock Stadium,2022-10-16,13:00,-7.5,49.5
+2022_07_KC_PHI,2022,7,REG,PHI,KC,26,21,1,0,0,0,outdoors,grass,Lincoln Financial Field,2022-10-23,13:00,2.5,54.5
+2022_07_BUF_DAL,2022,7,REG,DAL,BUF,23,19,1,0,0,0,retractable,astroturf,AT&T Stadium,2022-10-23,13:00,2.5,53.5
+2022_07_SF_MIA,2022,7,REG,MIA,SF,17,27,0,0,0,0,outdoors,grass,Hard Rock Stadium,2022-10-23,13:00,-4.5,47.5
+2022_07_BAL_DET,2022,7,REG,DET,BAL,14,19,0,0,0,0,retractable,astroturf,Ford Field,2022-10-23,13:00,-4.5,47.0
+2023_01_KC_BUF,2023,1,REG,BUF,KC,21,20,1,0,0,0,outdoors,astroturf,Highmark Stadium,2023-09-10,13:00,1.5,55.5
+2023_01_PHI_DAL,2023,1,REG,DAL,PHI,23,28,0,0,0,0,retractable,astroturf,AT&T Stadium,2023-09-10,13:00,-1.5,47.5
+2023_01_SF_BAL,2023,1,REG,BAL,SF,26,29,0,0,0,0,retractable,astroturf,M&T Bank Stadium,2023-09-10,13:00,-2.5,48.0
+2023_01_MIA_DET,2023,1,REG,DET,MIA,21,20,1,0,0,0,retractable,astroturf,Ford Field,2023-09-10,13:00,4.5,52.5
+2023_02_BUF_PHI,2023,2,REG,PHI,BUF,17,31,0,0,0,0,outdoors,grass,Lincoln Financial Field,2023-09-17,13:00,-3.5,50.5
+2023_02_DAL_SF,2023,2,REG,SF,DAL,19,12,1,0,0,0,outdoors,grass,Levi's Stadium,2023-09-17,13:00,3.5,44.5
+2023_02_BAL_MIA,2023,2,REG,MIA,BAL,20,22,0,0,0,0,outdoors,grass,Hard Rock Stadium,2023-09-17,13:00,-1.5,49.5
+2023_02_DET_KC,2023,2,REG,KC,DET,31,20,1,0,0,0,retractable,grass,Arrowhead Stadium,2023-09-17,13:00,-3.5,54.5
+2023_03_PHI_KC,2023,3,REG,KC,PHI,21,17,1,0,0,0,retractable,grass,Arrowhead Stadium,2023-09-24,13:00,3.5,55.0
+2023_03_DAL_BUF,2023,3,REG,BUF,DAL,20,10,1,0,0,0,outdoors,astroturf,Highmark Stadium,2023-09-24,13:00,4.5,50.5
+2023_03_MIA_SF,2023,3,REG,SF,MIA,30,17,1,0,0,0,outdoors,grass,Levi's Stadium,2023-09-24,13:00,3.5,51.5
+2023_03_BAL_DET,2023,3,REG,DET,BAL,6,38,0,0,0,0,retractable,astroturf,Ford Field,2023-09-24,13:00,-7.5,46.0
+2023_04_PHI_SF,2023,4,REG,SF,PHI,42,21,1,0,0,0,outdoors,grass,Levi's Stadium,2023-10-01,13:00,1.5,49.5
+2023_04_DAL_BAL,2023,4,REG,BAL,DAL,31,28,1,0,0,0,retractable,astroturf,M&T Bank Stadium,2023-10-01,13:00,-1.5,51.0
+2023_04_KC_MIA,2023,4,REG,MIA,KC,26,21,1,0,0,0,outdoors,grass,Hard Rock Stadium,2023-10-01,13:00,-5.5,52.5
+2023_04_BUF_DET,2023,4,REG,DET,BUF,23,31,0,0,0,0,retractable,astroturf,Ford Field,2023-10-01,13:00,-4.5,53.5
+2023_05_KC_SF,2023,5,REG,SF,KC,19,28,0,0,0,0,retractable,grass,Arrowhead Stadium,2023-10-08,13:00,-2.5,55.0
+2023_05_BUF_BAL,2023,5,REG,BAL,BUF,22,25,0,0,0,0,outdoors,astroturf,Highmark Stadium,2023-10-08,13:00,-3.5,50.5
+2023_05_MIA_PHI,2023,5,REG,PHI,MIA,14,17,0,0,0,0,outdoors,grass,Lincoln Financial Field,2023-10-08,13:00,2.5,51.5
+2023_05_DAL_DET,2023,5,REG,DET,DAL,20,20,0,0,0,0,retractable,astroturf,Ford Field,2023-10-08,13:00,0.5,53.0
+2023_06_BUF_KC,2023,6,REG,KC,BUF,27,20,1,0,0,0,retractable,grass,Arrowhead Stadium,2023-10-15,13:00,3.5,56.5
+2023_06_PHI_BAL,2023,6,REG,BAL,PHI,19,23,0,0,0,0,retractable,astroturf,M&T Bank Stadium,2023-10-15,13:00,-1.5,47.5
+2023_06_SF_DAL,2023,6,REG,DAL,SF,12,19,0,0,0,0,outdoors,grass,Levi's Stadium,2023-10-15,13:00,-2.5,48.5
+2023_06_MIA_DET,2023,6,REG,DET,MIA,28,24,1,0,0,0,retractable,astroturf,Ford Field,2023-10-15,13:00,-1.5,55.5
+2023_07_PHI_KC,2023,7,REG,KC,PHI,20,17,1,0,0,0,retractable,grass,Arrowhead Stadium,2023-10-22,13:00,5.5,53.5
+2023_07_BUF_DAL,2023,7,REG,DAL,BUF,10,31,0,0,0,0,retractable,astroturf,AT&T Stadium,2023-10-22,13:00,-3.5,51.0
+2023_07_SF_MIA,2023,7,REG,MIA,SF,17,31,0,0,0,0,outdoors,grass,Hard Rock Stadium,2023-10-22,13:00,-4.5,51.5
+2023_07_DET_BAL,2023,7,REG,BAL,DET,24,28,0,0,0,0,retractable,astroturf,M&T Bank Stadium,2023-10-22,13:00,-1.5,50.5

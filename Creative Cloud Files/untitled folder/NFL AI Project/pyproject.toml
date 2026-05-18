@@ -59,7 +59,7 @@ dev = [
 ]
 
 [project.scripts]
-nfl-chatbot = "nfl_chatbot.main:cli"
+nfl-chatbot = "nfl_chatbot.cli:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/nfl_chatbot"]

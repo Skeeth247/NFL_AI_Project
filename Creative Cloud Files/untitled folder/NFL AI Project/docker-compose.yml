@@ -1,0 +1,142 @@
+version: "3.9"
+
+# ── Shared build config ────────────────────────────────────────────────────────
+x-nfl-build: &nfl-build
+  build:
+    context: .
+    dockerfile: Dockerfile
+
+# ── Shared environment ─────────────────────────────────────────────────────────
+x-nfl-env: &nfl-env
+  DATABASE_URL: ${DATABASE_URL:-sqlite:///data/db/nfl.db}
+  MODEL_DIR: ${MODEL_DIR:-models}
+  NFL_DEMO_MODE: ${NFL_DEMO_MODE:-0}
+  LLM_PROVIDER: ${LLM_PROVIDER:-anthropic}
+  ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+  OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+  LOG_LEVEL: ${LOG_LEVEL:-info}
+
+# ── Volumes ────────────────────────────────────────────────────────────────────
+volumes:
+  nfl-data:
+    driver: local
+  nfl-models:
+    driver: local
+
+# ── Services ───────────────────────────────────────────────────────────────────
+services:
+
+  # FastAPI backend
+  api:
+    <<: *nfl-build
+    container_name: nfl-api
+    command: api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      <<: *nfl-env
+      API_HOST: "0.0.0.0"
+      API_PORT: "8000"
+      API_WORKERS: ${API_WORKERS:-2}
+    volumes:
+      - nfl-data:/app/data
+      - nfl-models:/app/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+  # Streamlit frontend
+  app:
+    <<: *nfl-build
+    container_name: nfl-app
+    command: app
+    ports:
+      - "${STREAMLIT_PORT:-8501}:8501"
+    environment:
+      <<: *nfl-env
+      STREAMLIT_PORT: "8501"
+    volumes:
+      - nfl-data:/app/data
+      - nfl-models:/app/models
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── Demo profile: zero-config, no ingestion required ──────────────────────────
+  # Usage: docker compose --profile demo up
+  api-demo:
+    <<: *nfl-build
+    container_name: nfl-api-demo
+    command: api
+    profiles: [demo]
+    ports:
+      - "8000:8000"
+    environment:
+      <<: *nfl-env
+      NFL_DEMO_MODE: "1"
+      API_HOST: "0.0.0.0"
+      API_PORT: "8000"
+      API_WORKERS: "1"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    restart: unless-stopped
+
+  app-demo:
+    <<: *nfl-build
+    container_name: nfl-app-demo
+    command: app
+    profiles: [demo]
+    ports:
+      - "8501:8501"
+    environment:
+      <<: *nfl-env
+      NFL_DEMO_MODE: "1"
+      STREAMLIT_PORT: "8501"
+    depends_on:
+      api-demo:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── One-shot pipeline helpers (run then exit) ─────────────────────────────────
+  init-db:
+    <<: *nfl-build
+    container_name: nfl-init-db
+    command: init-db
+    profiles: [pipeline]
+    environment:
+      <<: *nfl-env
+    volumes:
+      - nfl-data:/app/data
+    restart: "no"
+
+  ingest:
+    <<: *nfl-build
+    container_name: nfl-ingest
+    command: ingest
+    profiles: [pipeline]
+    environment:
+      <<: *nfl-env
+    volumes:
+      - nfl-data:/app/data
+    restart: "no"
+
+  train:
+    <<: *nfl-build
+    container_name: nfl-train
+    command: train
+    profiles: [pipeline]
+    environment:
+      <<: *nfl-env
+    volumes:
+      - nfl-data:/app/data
+      - nfl-models:/app/models
+    restart: "no"

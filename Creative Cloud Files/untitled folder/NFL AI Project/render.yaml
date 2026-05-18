@@ -1,0 +1,68 @@
+##############################################################################
+# render.yaml — Render.com infrastructure-as-code
+#
+# Deploys two web services from the same Docker image:
+#   nfl-api   → FastAPI on port 8000  (public)
+#   nfl-app   → Streamlit on port 8501 (public)
+#
+# Docs: https://render.com/docs/blueprint-spec
+##############################################################################
+
+services:
+
+  # ── FastAPI backend ──────────────────────────────────────────────────────────
+  - type: web
+    name: nfl-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: api
+    plan: free          # upgrade to starter/standard for production traffic
+    region: oregon
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///data/db/nfl.db  # override with a Render Postgres URL for production
+      - key: MODEL_DIR
+        value: models
+      - key: NFL_DEMO_MODE
+        value: "1"          # start in demo mode; set to 0 after ingestion
+      - key: API_HOST
+        value: "0.0.0.0"
+      - key: API_PORT
+        value: "8000"
+      - key: API_WORKERS
+        value: "1"
+      - key: LLM_PROVIDER
+        value: anthropic
+      - key: ANTHROPIC_API_KEY
+        sync: false         # set via Render dashboard — never hard-code
+      - key: OPENAI_API_KEY
+        sync: false         # set via Render dashboard — never hard-code
+      - key: LOG_LEVEL
+        value: info
+
+  # ── Streamlit frontend ───────────────────────────────────────────────────────
+  - type: web
+    name: nfl-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: app
+    plan: free
+    region: oregon
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///data/db/nfl.db
+      - key: MODEL_DIR
+        value: models
+      - key: NFL_DEMO_MODE
+        value: "1"
+      - key: STREAMLIT_PORT
+        value: "8501"
+      - key: LLM_PROVIDER
+        value: anthropic
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

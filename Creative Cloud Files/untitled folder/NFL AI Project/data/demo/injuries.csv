@@ -1,0 +1,16 @@
+season,week,team,player_id,player_name,position,report_primary_injury,report_secondary_injury,practice_status,game_status,date_modified
+2023,5,BUF,00-0033873,Josh Allen,QB,Elbow,,LP,Questionable,2023-10-04
+2023,5,SF,00-0037077,Brock Purdy,QB,Shoulder,,FP,,2023-10-04
+2023,5,DAL,00-0036972,Dak Prescott,QB,Thumb,,FP,,2023-10-04
+2023,5,PHI,00-0036898,Jalen Hurts,QB,Knee,,LP,Questionable,2023-10-04
+2023,5,KC,00-0035704,Travis Kelce,TE,Ankle,,FP,,2023-10-04
+2023,5,BAL,00-0033294,Lamar Jackson,QB,Knee,,LP,Questionable,2023-10-04
+2023,5,MIA,00-0035676,Tyreek Hill,WR,Hamstring,,LP,Questionable,2023-10-04
+2023,5,DET,00-0037744,Amon-Ra St. Brown,WR,Knee,,FP,,2023-10-04
+2023,6,BUF,00-0033873,Josh Allen,QB,Elbow,,FP,,2023-10-11
+2023,6,MIA,00-0035676,Tyreek Hill,WR,Hamstring,,DNP,Doubtful,2023-10-11
+2023,6,BAL,00-0033294,Lamar Jackson,QB,Knee,,FP,,2023-10-11
+2023,6,PHI,00-0035485,A.J. Brown,WR,Knee,,LP,Questionable,2023-10-11
+2023,6,KC,00-0037266,Isiah Pacheco,RB,Ribs,,FP,,2023-10-11
+2023,7,MIA,00-0035676,Tyreek Hill,WR,Hamstring,,DNP,Out,2023-10-18
+2023,7,SF,00-0037077,Brock Purdy,QB,Shoulder,,FP,,2023-10-18

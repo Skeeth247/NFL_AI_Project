@@ -652,7 +652,9 @@ class FeatureBuilder:
                     & (completed["gameday"] < game_date)
                 ]
             else:
-                prior = completed[completed["matchup_key"] == key]
+                # gameday is unknown — cannot establish a safe cutoff, so use
+                # no H2H history rather than risk including future games.
+                prior = completed.iloc[:0]
 
             all_prior = prior
             recent = prior.tail(self.h2h_lookback)

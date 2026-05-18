@@ -1,0 +1,50 @@
+# Version control
+.git
+.gitignore
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env.local
+
+# Secrets — never bake into the image
+.env
+*.pem
+*.key
+
+# Large data files — mounted as volumes at runtime
+data/raw/
+data/external/
+data/db/
+
+# Notebooks (not needed at runtime)
+notebooks/
+
+# Test artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+ctest/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+
+# Temporary / build
+tmp/
+*.tmp
